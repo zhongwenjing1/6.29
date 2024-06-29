@@ -1,0 +1,62 @@
+!<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="weather">选择今天的目的地：</label>
+    <select id="weather">
+        <option value="">--做出选择--</option>
+        <option value="chongqing">重庆</option>
+        <option value="beijing">北京</option>
+        <option value="yunnan">云南</option>
+        <option value="nanchang">南昌</option>
+    </select>
+
+    <p id="zhongwenjing"></p>
+</body>
+<script stype="text/javascript">
+
+        var renderHTML = (content) => {
+            var p = document.querySelector("#zhongwenjing");
+            p.textContent = content;
+        }
+
+    var Operation = () => {
+        var select = document.querySelector('#weather');
+        console.log(select.value);
+        console.log("我选了一下,选的是",select.value);
+
+        switch (select.value) {
+            case 'chongqing': renderHTML("总要去趟重庆吧，吹吹嘉陵江的晚风，走走南滨路，去趟长江国际，感受山城的夏天");
+                break;
+            case 'beijing': renderHTML("故宫，一个红墙蓝瓦 片片祈福的地方");
+                break;
+            case 'yunnan': renderHTML("去一趟云南，去一个有风的地方");
+                break;
+            case 'nanchang': renderHTML("来南昌赴一场古都惊鸿宴");
+                break;
+            default:
+                console.log("");
+        }
+        //if (select.value == 'chongqing') {
+        //console.log("总要去趟重庆吧，吹吹嘉陵江的晚风，走走南滨路，去趟长江国际，感受山城的夏天");
+        //} else if (select.value == 'beijing') {
+        // console.log("故宫，一个红墙蓝瓦 片片祈福的地方");
+        // } else if (select.value == 'yunnan') {
+        //  console.log("去一趟云南，去一个有风的地方");
+        //} else if (select.value == 'nanchang') {
+        // console.log("来南昌赴一场古都惊鸿宴");
+        // } else {
+        // console.log("");
+        // }
+    }
+    var select = document.querySelector('#weather');
+    console.log(select.value);
+    select.addEventListener("change",Operation);
+        
+</script>
+</html>
